@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+/*--------(->) tag turn clockwise code for all ------------*/
+
+.hover-underline-animation {
+  position: relative;
+  color: #fefefe;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+.hover-underline-animation span,
+.hover-underline-animation i {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.hover-underline-animation:hover {
+  color: #f8fafb;
+}
+
+.hover-underline-animation:hover span {
+  transform: rotate(10deg); /*  rotation degree for the span */
+}
+
+.hover-underline-animation:hover i {
+  transform: rotate(30deg); /* rotation degree for i  */
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/*-----a tag animation underline for all----*/
+
+a {
+  text-transform: uppercase;
+}
+.hover-underline-animation {
+  position: relative;
+  color: #feffff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #f9fafb;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  border-radius: 3px;
+}
+
+/*-------mouse circle-----*/
+#minicircle {
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: 99999;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/*---------main-----------*/
+.main {
+  width: 100%;
+  background-color: black;
+}
+
+/*----------- hero part ------------------ */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  color: #fff;
+}
+/* -------------------nav part------------ */
+.nav {
+  width: 100%;
+  padding: 30px 40px;
+  color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+
+  text-transform: uppercase;
+}
+/* --------------heading part------------- */
+.heading {
+  margin-top: 60px;
+  padding: 20px 40px;
+}
+.heading h1 {
+  font-size: 9vw;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: rgb(151, 150, 150);
+  line-height: 100%;
+}
+
+#fron {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.heading #secondh1 {
+  margin-left: 100px;
+}
+
+#secondh1 {
+  background-color: rgb(144, 1, 30);
+  border-radius: 5px;
+}
+
+.blocktext {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: fit-content;
+  padding-right: 5px;
+}
+
+.blocktext h5 {
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: right !important;
+}
+
+/*animate part where is i am hiding text*/
+.bounding {
+  width: fit-content;
+  overflow: hidden;
+}
+
+.bounding .boundingelem {
+  transform: translateY(100%);
+}
+
+/*--------------------small heading part------------*/
+.smallheading {
+  margin-top: 100px;
+  text-transform: uppercase;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.smallheading h5 {
+  text-align: right;
+  line-height: 30px;
+  margin-top: 0.5vw;
+}
+
+/*----------------hero footer-------------------*/
+.heroFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+  position: relative;
+}
+
+.heroFooter a {
+  color: white;
+  text-decoration: none;
+}
+
+.iconset {
+  display: flex;
+  gap: 5px;
+}
+.heroFooter .circle {
+  background-color: rgb(157, 156, 156);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  color: black;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 900px) {
+  .smallheading {
+    padding-bottom: 200px;
+  }
+  .iconset {
+    display: none;
+  }
+}
+
+/*---------second part---------*/
+
+.second {
+  color: #fff;
+  padding-right: 10vw;
+  padding-top: 200px;
+  background-color: black;
+  width: 100%;
+  height: 150vh;
+  padding-left: 30px;
+}
+/*----------elem part-----------*/
+.elem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3.5vw 3vw;
+  padding-right: 0;
+  border-top: 1px solid #888;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.elem h1 {
+  text-transform: uppercase;
+  font-size: 7.6vw;
+  opacity: 0.7;
+  h1 :hover {
+    transform: translateX(20px);
+    color: white;
+  }
+}
+
+.elem img {
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+.elemlast {
+  border-bottom: 1px solid #888;
+}
+
+/*---------------hover image part--------------*/
+
+.elem img {
+  opacity: 0;
+  pointer-events: none;
+  height: 140%;
+  z-index: 999;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+/*----------about part--------------------*/
+
+.about {
+  background-color: black;
+  width: 100%;
+  padding: 10vw 5vw;
+  padding-left: 40vw;
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 50px;
+}
+
+.textabout {
+  width: 25rem;
+}
+
+.textabout h5 {
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.textabout p {
+  line-height: 1.7;
+  margin-bottom: 50px;
+}
+
+.about img {
+  width: 200px;
+  border-radius: 2%;
+}
+
+.about a {
+  padding: 12px 22px;
+  border: 1px solid white;
+  border-radius: 100px;
+  color: white;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    margin-top: -400px;
+    padding: 40px 30px;
+    align-items: flex-start;
+  }
+  .textabout {
+    width: 22rem;
+  }
+}
+
+/*----------subscribe---------*/
+
+.subscribe {
+  color: #fff;
+  padding: 20px 30px;
+
+  background-color: black;
+}
+
+.subscribe h5 {
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.subscribe h3 {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.subscribe h3 {
+  display: inline-block;
+  color: rgb(249, 248, 248);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.subscribe h3:hover {
+  transform: translateX(20px);
+  color: white;
+}
+
+/*----------Footer--------------*/
+
+#footer {
+  color: #fff;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  padding-bottom: 30px;
+}
+
+#footerleft {
+  display: flex;
+  gap: 20px;
+}
+
+#current-time {
+  color: white;
+}
+
+#footerright {
+  display: flex;
+  gap: 40px;
+}
+
+#footer a {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* preloader */
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(160, 159, 159);
+  overflow: hidden;
+  z-index: 100;
+
+  .text-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    overflow: hidden;
+    color: white;
+    opacity: 0;
+  }
+}
