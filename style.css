@@ -6,8 +6,7 @@
   font-family: Outfit;
 }
 
-html { overflow-y: scroll; overflow-x:hidden; }
-body { position: absolute; }
+
 
 
 
@@ -17,14 +16,10 @@ body {
   width: 100%;
   height: 100%;
   background-color: black;
-  overflow: scroll;
+  overflow-y: scroll !important;
   -webkit-overflow-scrolling: touch;
 }
 
-body {
-  overflow: scroll !important;
-  
-}
 
 /*--------(->) tag turn clockwise code for all ------------*/
 
