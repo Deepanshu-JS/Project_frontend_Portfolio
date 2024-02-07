@@ -23,7 +23,7 @@ function firstPageAnim() {
   tl.from(".nav", {
     y: "-10",
     opacity: 0,
-    delay:6,
+    delay: 6,
     duration: 1.5,
     ease: Expo.easeInOut,
   })
@@ -88,7 +88,6 @@ setInterval(updateTime, 1000);
 firstPageAnim();
 circleChaptaKaro();
 
-
 // hover wala animation
 document.querySelectorAll(".elem").forEach(function (elem) {
   var rotate = 0;
@@ -119,13 +118,14 @@ document.querySelectorAll(".elem").forEach(function (elem) {
 // preloader
 const tl2 = gsap.timeline();
 
-tl2.to("body", {
-  overflow: "hidden"
-})
+tl2
+  .to("body", {
+    overflow: "hidden",
+  })
   .to(".preloader .text-container", {
     duration: 0,
     opacity: 1,
-    ease: "Power3.easeOut"
+    ease: "Power3.easeOut",
   })
   .from(".preloader .text-container h1", {
     duration: 2.5,
@@ -133,68 +133,79 @@ tl2.to("body", {
     y: 70,
     skewY: 10,
     stagger: 0.4,
-    ease: "Power3.easeOut"
+    ease: "Power3.easeOut",
   })
   .to(".preloader .text-container h1", {
     duration: 2.2,
     y: 70,
     skewY: -20,
     stagger: 0.2,
-    ease: "Power3.easeOut"
+    ease: "Power3.easeOut",
   })
   .to(".preloader", {
     duration: 1.5,
     height: "0vh",
-    ease: "Power3.easeOut"
+    ease: "Power3.easeOut",
   })
   .to(
     "body",
     {
-      overflow: "hidden"
+      overflow: "hidden",
     },
     "-=2"
   )
   .to(".preloader", {
-    display: "none"
+    display: "none",
   });
 
+/*click image and redirect to page whatever you want*/
 
-  /*click image and redirect to page whatever you want*/ 
+document.querySelectorAll(".elem").forEach(function (elem) {
+  var rotate = 0;
+  var diffrot = 0;
 
-  document.querySelectorAll(".elem").forEach(function (elem) {
-    var rotate = 0;
-    var diffrot = 0;
-  
-    elem.addEventListener("mouseleave", function () {
-      gsap.to(elem.querySelector("img"), {
-        opacity: 0,
-        ease: "Power3",
-        duration: 0.5,
-      });
-    });
-  
-    elem.addEventListener("mousemove", function (dets) {
-      var diff = dets.clientY - elem.getBoundingClientRect().top;
-      diffrot = dets.clientX - rotate;
-      rotate = dets.clientX;
-      var img = elem.querySelector("img");
-  
-      gsap.to(elem.querySelector("img"), {
-        opacity: 1,
-        ease: Power4,
-        top: diff,
-        left: dets.clientX,
-        rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
-      });
-  
-      var link = elem.getAttribute("data-href");
-      if (link) {
-        elem.style.cursor = "pointer";
-        elem.addEventListener("click", function () {
-          window.open(link, "_blank"); // Open link in a new tab
-          
-        });
-      }
+  elem.addEventListener("mouseleave", function () {
+    gsap.to(elem.querySelector("img"), {
+      opacity: 0,
+      ease: "Power3",
+      duration: 0.5,
     });
   });
-  
+
+  elem.addEventListener("mousemove", function (dets) {
+    var diff = dets.clientY - elem.getBoundingClientRect().top;
+    diffrot = dets.clientX - rotate;
+    rotate = dets.clientX;
+    var img = elem.querySelector("img");
+
+    gsap.to(elem.querySelector("img"), {
+      opacity: 1,
+      ease: Power4,
+      top: diff,
+      left: dets.clientX,
+      rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
+    });
+
+    var link = elem.getAttribute("data-href");
+    if (link) {
+      elem.style.cursor = "pointer";
+      elem.addEventListener("click", function () {
+        window.open(link, "_blank"); // Open link in a new tab
+      });
+    }
+  });
+});
+
+locoScroll.init();
+
+// To disable Locomotive Scroll and hide scrollbar
+function disableLocomotiveScroll() {
+  locoScroll.destroy();
+  document.body.classList.remove("scroll-lock");
+}
+
+// To enable Locomotive Scroll and show scrollbar
+function enableLocomotiveScroll() {
+  locoScroll.init();
+  document.body.classList.add("scroll-lock");
+}

@@ -9,17 +9,23 @@
 
 
 
+html {
+  overflow: hidden; /* Hide default scrollbar on html element */
+}
 
-
-html, body {
+body {
   width: 100%;
   height: 100%;
   background-color: black;
   overflow-x: hidden; /* Disable horizontal scrolling */
-  overflow-y: auto !important;   /* Enable vertical scrolling */
+  overflow-y: auto !important; /* Enable vertical scrolling */
   -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
 }
 
+/* Add this style to hide the scrollbar while using Locomotive Scroll */
+body.scroll-lock {
+  overflow: hidden !important;
+}
 
 
 /*--------(->) tag turn clockwise code for all ------------*/
