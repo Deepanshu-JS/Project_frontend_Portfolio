@@ -6,6 +6,9 @@
   font-family: Outfit;
 }
 
+html { overflow-y: scroll; overflow-x:hidden; }
+body { position: absolute; }
+
 html,
 body {
   width: 100%;
