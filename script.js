@@ -211,12 +211,3 @@ function enableLocomotiveScroll() {
 }
 
 
-// Enable Locomotive Scroll
-function enableLocomotiveScroll() {
-  scroll.init();
-}
-
-// Disable Locomotive Scroll
-function disableLocomotiveScroll() {
-  scroll.destroy();
-}
