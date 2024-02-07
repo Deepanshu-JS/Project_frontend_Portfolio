@@ -9,11 +9,16 @@
 html { overflow-y: scroll; overflow-x:hidden; }
 body { position: absolute; }
 
+
+
+
 html,
 body {
   width: 100%;
   height: 100%;
   background-color: black;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 /*--------(->) tag turn clockwise code for all ------------*/
