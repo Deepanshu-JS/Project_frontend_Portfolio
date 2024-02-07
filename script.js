@@ -196,18 +196,5 @@ document.querySelectorAll(".elem").forEach(function (elem) {
   });
 });
 
-scroll.init();
-
-// To disable Locomotive Scroll and hide scrollbar
-function disableLocomotiveScroll() {
-  scroll.destroy();
-  document.body.classList.remove("main");
-}
-
-// To enable Locomotive Scroll and show scrollbar
-function enableLocomotiveScroll() {
-  scroll.init();
-  document.body.classList.add("main");
-}
 
 
