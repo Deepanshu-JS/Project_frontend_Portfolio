@@ -23,7 +23,7 @@ body {
 }
 
 /* Add this style to hide the scrollbar while using Locomotive Scroll */
-body.scroll-lock {
+body.main {
   overflow: hidden !important;
 }
 

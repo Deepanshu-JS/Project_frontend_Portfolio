@@ -201,11 +201,11 @@ locoScroll.init();
 // To disable Locomotive Scroll and hide scrollbar
 function disableLocomotiveScroll() {
   locoScroll.destroy();
-  document.body.classList.remove("scroll-lock");
+  document.body.classList.remove("main");
 }
 
 // To enable Locomotive Scroll and show scrollbar
 function enableLocomotiveScroll() {
   locoScroll.init();
-  document.body.classList.add("scroll-lock");
+  document.body.classList.add("main");
 }
