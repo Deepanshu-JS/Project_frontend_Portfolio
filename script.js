@@ -196,16 +196,27 @@ document.querySelectorAll(".elem").forEach(function (elem) {
   });
 });
 
-locoScroll.init();
+scroll.init();
 
 // To disable Locomotive Scroll and hide scrollbar
 function disableLocomotiveScroll() {
-  locoScroll.destroy();
+  scroll.destroy();
   document.body.classList.remove("main");
 }
 
 // To enable Locomotive Scroll and show scrollbar
 function enableLocomotiveScroll() {
-  locoScroll.init();
+  scroll.init();
   document.body.classList.add("main");
+}
+
+
+// Enable Locomotive Scroll
+function enableLocomotiveScroll() {
+  scroll.init();
+}
+
+// Disable Locomotive Scroll
+function disableLocomotiveScroll() {
+  scroll.destroy();
 }
