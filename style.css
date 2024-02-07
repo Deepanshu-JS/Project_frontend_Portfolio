@@ -18,7 +18,7 @@ body {
   background-color: black;
   overflow-x: auto ;
   /*this fixes mobile*/
-  overflow-y: auto;
+  overflow-y: auto scroll !important;
   -webkit-overflow-scrolling: touch;
 }
 
