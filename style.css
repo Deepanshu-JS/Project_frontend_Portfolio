@@ -385,13 +385,12 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
-
-  height: 8vh;
 }
 
 #footerleft {
   display: flex;
   gap: 20px;
+  margin-bottom: 3vh;
 }
 
 #current-time {
@@ -401,6 +400,7 @@ a {
 #footerright {
   display: flex;
   gap: 40px;
+  margin-bottom: 3vh;
 }
 
 #footer a {

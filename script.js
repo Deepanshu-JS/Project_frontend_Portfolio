@@ -13,8 +13,6 @@ function circleMouseFollower(xscale = 1, yscale = 1) {
   });
 }
 
-circleMouseFollower();
-
 // hero section text animation
 
 function firstPageAnim() {
@@ -80,13 +78,6 @@ function updateTime() {
   // Display the time in the HTML element
   document.getElementById("current-time").innerHTML = formattedTime;
 }
-
-// Call updateTime once to display the initial time
-updateTime();
-setInterval(updateTime, 1000);
-
-firstPageAnim();
-circleChaptaKaro();
 
 // hover wala animation
 document.querySelectorAll(".elem").forEach(function (elem) {
@@ -196,5 +187,13 @@ document.querySelectorAll(".elem").forEach(function (elem) {
   });
 });
 
+//mouse cursor none
+document.body.style.cursor = "none";
 
 
+// Call updateTime once to display the initial time
+circleMouseFollower();
+updateTime();
+setInterval(updateTime, 1000);
+firstPageAnim();
+circleChaptaKaro();
