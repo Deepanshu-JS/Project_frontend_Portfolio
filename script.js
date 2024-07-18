@@ -2,6 +2,7 @@ var timeout;
 const scroll = new LocomotiveScroll({
   el: document.querySelector(".main"),
   smooth: true,
+  smoothMobile: true
 });
 
 //   mouse circle
@@ -108,7 +109,6 @@ document.querySelectorAll(".elem").forEach(function (elem) {
 
 // preloader
 const tl2 = gsap.timeline();
-
 tl2
   .to("body", {
     overflow: "hidden",
@@ -189,7 +189,6 @@ document.querySelectorAll(".elem").forEach(function (elem) {
 
 //mouse cursor none
 document.body.style.cursor = "none";
-
 
 // Call updateTime once to display the initial time
 circleMouseFollower();
