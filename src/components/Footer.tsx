@@ -61,8 +61,8 @@ const Footer = () => {
   };
 
   return (
-    <motion.footer
-      className="bg-background py-6 px-6 md:px-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+    <motion.div
+      className="bg-background py-6 px-6 md:px-10 flex flex-row items-center justify-between gap-4 w-full"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -111,7 +111,7 @@ const Footer = () => {
           linkedin
         </motion.a>
       </motion.div>
-    </motion.footer>
+    </motion.div>
   );
 };
 

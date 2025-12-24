@@ -103,23 +103,35 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
   };
 
   const handleLinkClick = (href: string) => {
-    onClose();
-    if (href.startsWith("#")) {
-      setTimeout(() => {
-        const element = document.querySelector(href);
-        if (element) {
-          const offset = 80;
-          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({
-            top: elementPosition - offset,
+  onClose();
+  if (href.startsWith("#")) {
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        // Find the scrollable container (main element)
+        const scrollContainer = document.querySelector('main');
+        if (scrollContainer) {
+          const elementPosition = element.getBoundingClientRect().top;
+          const containerScrollTop = scrollContainer.scrollTop;
+          const offset = 0;
+          
+          scrollContainer.scrollTo({
+            top: containerScrollTop + elementPosition - offset,
             behavior: "smooth",
           });
+        } else {
+          // Fallback to window scroll
+          element.scrollIntoView({ behavior: "smooth" });
         }
-      }, 700);
-    } else if (href.startsWith("mailto:")) {
-      window.location.href = href;
-    }
-  };
+      }
+    }, 700);
+  } else if (href.startsWith("mailto:")) {
+    window.location.href = href;
+  } else {
+    window.open(href, "_blank");
+  }
+};
+
 
   return (
     <AnimatePresence>

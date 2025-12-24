@@ -31,10 +31,24 @@ body {
   width: 100%;
   height: 100%;
   background-color: black;
-  overflow-x: auto;
-  /*this fixes mobile*/
-  overflow-y: auto scroll !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+html::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /*--------(->) tag turn clockwise code for all ------------*/

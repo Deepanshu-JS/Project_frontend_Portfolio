@@ -87,12 +87,10 @@ const Index = () => {
           </AnimatedSection>
         </section>
         
-        <SectionTransition variant="fold" />
+        <SectionTransition variant="tear" />
         
         <section className="snap-start snap-always">
-          <AnimatedSection animation="fadeUp" delay={0.1}>
-            <Footer />
-          </AnimatedSection>
+          <Footer />
         </section>
       </main>
     </>
