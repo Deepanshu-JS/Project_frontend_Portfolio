@@ -2,6 +2,9 @@ import { useState, useRef } from "react";
 import { motion, Variants, useScroll, useTransform } from "framer-motion";
 import SmoothReveal from "./SmoothReveal";
 import GlitchText from "./GlitchText";
+import portfolioImg from "/asset/portfilio.png";
+import paperPortfolioImg from "/asset/The paper Portfolio.png";
+import deepanshuImg from "/asset/Deepanshu Singh.png";
 
 interface Project {
   id: number;
@@ -17,7 +20,7 @@ const projects: Project[] = [
     id: 1,
     title: "The Portfolio",
     year: "2023",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+    image: portfolioImg,
     href: "#",
     color: "348 99% 28%",
   },
@@ -25,7 +28,7 @@ const projects: Project[] = [
     id: 2,
     title: "Paper Portfolio",
     year: "2023",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+    image: paperPortfolioImg,
     href: "#",
     color: "220 90% 50%",
   },
@@ -33,7 +36,7 @@ const projects: Project[] = [
     id: 3,
     title: "Internship",
     year: "2023",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+    image: deepanshuImg,
     href: "#",
     color: "150 80% 40%",
   },

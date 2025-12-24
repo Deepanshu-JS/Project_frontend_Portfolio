@@ -2,6 +2,7 @@ import { motion, Variants, useScroll, useTransform, useInView } from "framer-mot
 import { useRef, useState } from "react";
 import SmoothReveal from "./SmoothReveal";
 import MagneticButton from "./MagneticButton";
+import meImage from "/asset/me.jpg";
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -113,8 +114,8 @@ const About = () => {
           />
           
           <motion.img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
-            alt="Deepanshu"
+            src={meImage}
+            alt="Deepanshu Singh"
             className="w-40 md:w-52 rounded-sm relative z-10"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}

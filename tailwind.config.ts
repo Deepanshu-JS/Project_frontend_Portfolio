@@ -15,6 +15,8 @@ export default {
     extend: {
       fontFamily: {
         outfit: ["Outfit", "sans-serif"],
+        general: ["GeneralSans", "sans-serif"],
+        lilita: ["LilitaOne", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
