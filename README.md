@@ -1,38 +1,73 @@
+# Welcome to your Lovable project
 
-Porfolio App
+## Project info
 
-Description:
-Porfolio is a stunning showcase of my skills and creativity, crafted with a blend of HTML, CSS, and JavaScript. This personal portfolio website is not just a digital resume; it's an immersive journey through my work and expertise. Leveraging the power of GSAP for animations and Locomotive.js for smooth scrolling, the user experience is taken to the next level.
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
+## How can I edit this code?
 
-Key Features:
+There are several ways of editing your application.
 
-Sleek Design:
-The portfolio boasts a modern and sleek design, reflecting my commitment to aesthetics and user-centric design principles.
+**Use Lovable**
 
-Interactive Animations (gSAP):  
-Elevate user engagement with seamless and eye-catching animations powered by GreenSock Animation Platform (gSAP).
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-Smooth Scrolling (Locomotive.js):  
-Locomotive.js ensures a smooth and intuitive scrolling experience, enhancing navigation and creating a polished feel.
+Changes made via Lovable will be committed automatically to this repo.
 
-Responsive Layout:   
-The portfolio is designed to be fully responsive, ensuring a seamless and consistent experience across devices.
+**Use your preferred IDE**
 
-Project Showcases:  
-Each project is presented with care, highlighting the key aspects of my work, skills, and the technologies used.
-Technology Stack:
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-Frontend:
-HTML5  
-CSS3  
-JavaScript (ES6+)  
-GreenSock Animation Platform (gSAP)  
-Locomotive.js  
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Challenges Overcome:  
-Overcoming challenges in creating fluid animations and implementing smooth scrolling, the portfolio stands as a testament to my dedication to delivering not just a website but an immersive digital experience.
+Follow these steps:
 
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-Outcome:  
-Porfolio is more than a digital representation; it's a showcase of my passion for clean design, interactive elements, and cutting-edge web technologies. It reflects my commitment to presenting my skills in a way that captivates and informs visitors.
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
+
+**Edit a file directly in GitHub**
+
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
+
+**Use GitHub Codespaces**
+
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
+
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
