@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, Variants, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
+import { useState } from "react";
+import { motion, Variants, useMotionValue, useSpring, useTransform, useScroll, useMotionTemplate } from "framer-motion";
 import { ArrowDownLine, ArrowRightUpLine } from "./Icons";
 import Menu from "./Menu";
 import MagneticButton from "./MagneticButton";
@@ -21,6 +21,10 @@ const Hero = ({ isLoaded }: HeroProps) => {
 
   const rotateX = useTransform(springY, [0, window.innerHeight], [5, -5]);
   const rotateY = useTransform(springX, [0, window.innerWidth], [-5, 5]);
+
+  // Mouse position for gradient
+  const backgroundX = useMotionTemplate`${useTransform(springX, [0, window.innerWidth], [0, 100])}%`;
+  const backgroundY = useMotionTemplate`${useTransform(springY, [0, window.innerHeight], [0, 100])}%`;
 
   // Parallax scroll effect
   const { scrollY } = useScroll();
@@ -86,7 +90,7 @@ const Hero = ({ isLoaded }: HeroProps) => {
       
       <section 
         id="home" 
-        className="min-h-screen bg-background relative flex flex-col overflow-hidden"
+        className="min-h-screen bg-background relative flex flex-col overflow-hidden w-screen"
         onMouseMove={handleMouseMove}
       >
         {/* Parallax background layers */}
@@ -102,12 +106,8 @@ const Hero = ({ isLoaded }: HeroProps) => {
           <motion.div 
             className="absolute inset-0 opacity-30"
             style={{
-              background: "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--primary) / 0.15) 0%, transparent 50%)",
+              background: useMotionTemplate`radial-gradient(circle at ${backgroundX} ${backgroundY}, hsl(var(--primary) / 0.15) 0%, transparent 50%)`,
             }}
-            animate={{
-              "--mouse-x": `${springX.get()}px`,
-              "--mouse-y": `${springY.get()}px`,
-            } as any}
           />
 
           {/* Floating parallax circles */}
@@ -282,7 +282,7 @@ const Hero = ({ isLoaded }: HeroProps) => {
           transition={{ delay: 1.8, duration: 1 }}
         >
           <MarqueeText 
-            text="FRONTEND DEVELOPER • UI/UX DESIGN • CREATIVE CODING • WEB ANIMATIONS" 
+            text="FRONTEND DEVELOPER • CREATIVE CODING • WEB ANIMATIONS" 
             className="text-2xl md:text-4xl font-bold text-muted-foreground/30"
             speed={25}
           />
