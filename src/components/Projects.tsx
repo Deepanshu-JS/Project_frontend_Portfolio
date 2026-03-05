@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "Paper Portfolio",
     year: "2023",
     image: paperPortfolioImg,
-    href: "#",
+    href: "https://deepanshu-js.github.io/Project_miranda/",
     color: "220 90% 50%",
   },
   {
