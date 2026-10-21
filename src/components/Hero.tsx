@@ -282,7 +282,7 @@ const Hero = ({ isLoaded }: HeroProps) => {
           transition={{ delay: 1.8, duration: 1 }}
         >
           <MarqueeText 
-            text="FRONTEND DEVELOPER • CREATIVE CODING • WEB ANIMATIONS" 
+            text="FRONTEND DEVELOPER • AI AUTOMATION ENGINEER • CREATIVE CODING • WEB ANIMATIONS" 
             className="text-2xl md:text-4xl font-bold text-muted-foreground/30"
             speed={25}
           />

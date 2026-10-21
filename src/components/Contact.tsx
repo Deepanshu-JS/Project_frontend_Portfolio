@@ -3,6 +3,12 @@ import { motion, Variants } from "framer-motion";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
+import emailjs from "emailjs-com";
+
+const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const emailJsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const emailJsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const contactEmail = "singhdepanshu786@gmail.com";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -80,16 +86,45 @@ const Contact = () => {
       return;
     }
 
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      if (emailJsPublicKey && emailJsServiceId && emailJsTemplateId) {
+        await emailjs.send(
+          emailJsServiceId,
+          emailJsTemplateId,
+          {
+            from_name: result.data.name,
+            from_email: result.data.email,
+            message: result.data.message,
+            to_email: contactEmail,
+          },
+          emailJsPublicKey,
+        );
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        const subject = `Portfolio contact from ${result.data.name}`;
+        const body = `Name: ${result.data.name}\nEmail: ${result.data.email}\n\n${result.data.message}`;
+        window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+        toast({
+          title: "Email draft opened",
+          description: "Finish sending the message in your email app.",
+        });
+      }
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Error sending message",
+        description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const isFieldActive = (field: keyof ContactFormData) => {
@@ -135,7 +170,6 @@ const Contact = () => {
               onFocus={() => setFocusedField("name")}
               onBlur={() => setFocusedField(null)}
               className="w-full bg-transparent border-b-2 border-border py-4 text-foreground text-lg focus:outline-none focus:border-primary transition-colors duration-300"
-              whileFocus={{ borderColor: "hsl(var(--primary))" }}
             />
             {errors.name && (
               <motion.p

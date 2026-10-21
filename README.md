@@ -24,6 +24,12 @@ npm install
 npm run dev
 ```
 
+## Configure the contact form
+
+The contact form can send directly through EmailJS. Create an EmailJS service and template, copy `.env.example` to `.env.local`, then set `VITE_EMAILJS_PUBLIC_KEY`, `VITE_EMAILJS_SERVICE_ID`, and `VITE_EMAILJS_TEMPLATE_ID` from your EmailJS account. The template should use the `from_name`, `from_email`, `message`, and `to_email` parameters. Restart the development server after setting these values.
+
+Without EmailJS configuration, submitting the form opens a prefilled email draft instead.
+
 **Edit directly on GitHub**
 
 - Navigate to the desired file(s)
@@ -75,3 +81,7 @@ Then deploy the `dist` folder to your hosting service (Vercel, Netlify, GitHub P
 - 📱 Mobile-friendly interface
 - ♿ Accessible component library
 - 🎭 Custom cursor and interactive effects
+
+
+
+//we are working on contact.tsx and we are using emailjs , we need to sign up and make account there and get credentials and paste it contact.tsx all done
